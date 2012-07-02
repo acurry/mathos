@@ -23,14 +23,14 @@
 (defn sieve 
   ([upper] 
    (loop [index 0 primes (s-range 2 upper)]
-            (if 
-              (square-less-than-max (nth primes index) upper)
-              primes
-              (recur 
-                (+ 1 index) (s-filter (nth primes index) primes)
-                )
-              )
-            )
+     (if 
+       (square-less-than-max (nth primes index) upper)
+       primes
+       (recur 
+         (+ 1 index) (s-filter (nth primes index) primes)
+         )
+       )
+     )
    )
   )
 

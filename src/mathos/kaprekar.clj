@@ -1,4 +1,4 @@
-(ns kaprekar)
+(ns mathos.kaprekar)
 
 (defn kap [n]
   (-
@@ -7,7 +7,7 @@
     )
   )
 
-(defn kap-sequence [n]
+(defn kaprekar [n]
    (loop [k n kaps [-1]]
      (if
        (or (= k 0) (= (kap k) (last kaps))) kaps

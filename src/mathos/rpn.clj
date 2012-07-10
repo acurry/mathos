@@ -1,4 +1,4 @@
-(ns rpn)
+(ns mathos.rpn)
 ; Reverse Polish Notation
 ; given:  3 + 4
 ; return: 3 4 +

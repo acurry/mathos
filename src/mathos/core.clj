@@ -1,6 +1,7 @@
-(ns mathos.core)
+(ns mathos.core
+	(:require [mathos.emirp :as e])
+	(:require [mathos.kaprekar :as k])
+	(:require [mathos.sieve :as s])
+	(:require [mathos.rpn :as r]))
 
-(defn -main
-  "I don't do a whole lot."
-  [& args]
-  (println "Hello, World!"))
+

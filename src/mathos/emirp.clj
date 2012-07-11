@@ -5,17 +5,10 @@
   [seq elm]
   (some #(= elm %) seq))
 
-(defn to-numeric-palindrome
+(defn toNumericPalindrome
   "Returns a number's reversed digits as an Integer."
   [x]
   (Integer. (apply str (reverse (str x)))))
-
-(defn is-emirp? [n]
-  "Determines if number is an emirp."
-  (and
-    (not (s/palindromic? x))
-    (in? primes (to-numeric-palindrome x))
-    ))
 
 (defn emirp
   "Return a list of 'emirp' primes; primes whose reverse forms
@@ -25,7 +18,11 @@
     [primes (s/sieve upperBound)]
     (filter
       (fn [x]
-        (is-emirp? x) primes
+        (and
+          (not (s/palindromic? x))
+          (in? primes (toNumericPalindrome x))
+          )
+        ) primes
       )
     )
   )

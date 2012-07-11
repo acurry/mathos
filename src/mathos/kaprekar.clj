@@ -8,7 +8,7 @@
   )
 
 (defn kaprekar [n]
-   (loop [k n kaps [-1]]
+   (loop [k n kaps []]
      (if
        (or (= k 0) (= (kap k) (last kaps))) kaps
        (recur (kap k) (conj kaps (kap k)))

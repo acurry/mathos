@@ -5,7 +5,7 @@
   [seq elm]
   (some #(= elm %) seq))
 
-(defn toNumericPalindrome
+(defn to-numeric-palindrome
   "Returns a number's reversed digits as an Integer."
   [x]
   (Integer. (apply str (reverse (str x)))))
@@ -20,7 +20,7 @@
       (fn [x]
         (and
           (not (s/palindromic? x))
-          (in? primes (toNumericPalindrome x))
+          (in? primes (to-numeric-palindrome x))
           )
         ) primes
       )

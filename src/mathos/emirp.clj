@@ -1,5 +1,5 @@
-(ns emirp
-  (:require [sieve :as s]))
+(ns mathos.emirp
+  (:require [mathos.sieve :as s]))
 
 (defn in?
   [seq elm]

@@ -1,4 +1,4 @@
-(ns sieve)
+(ns mathos.sieve)
 
 (defn s-filter [start coll] 
   (filter 

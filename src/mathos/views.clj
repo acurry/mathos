@@ -1,8 +1,8 @@
-(ns mathos.vies
-  (:use [hiccup core page-helpers]))
+(ns mathos.views
+  (:use hiccup.core hiccup.page))
 
 (defn index-page []
-  (html5
+  (html
     [:head
      [:title "mathos home"]
      (include-css "/css/style.css")]

@@ -1,18 +1,9 @@
 (ns mathos.routes
-  (:use compojure.core
-        mathos.views
-        [hiccup.middleware :only (wrap-base-url)])
-  (:require [compojure.route :as route]
-            [compojure.handler :as handler]
-            [compojure.response :as response]))
+  (:use compojure.core mathos.views)
+  (:require [compojure.route :as route]))
 
-(defroutes main-routes
+(defroutes app
            (GET "/" [] (index-page))
            (route/resources "/")
            (route/not-found "not found"))
-
-(def app
-  (-> 
-    (handler/site main-routes)
-    (wrap-base-url)))
 

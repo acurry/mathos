@@ -10,8 +10,7 @@
    :body (cljson/json-str data)})
 
 (defroutes emirp-routes
-           (GET "/:n" 
-                [n] 
+           (GET ["/:n" :n #"[0-9]+"] [n]
                 (with-json (mathos/emirp (Integer. n)))))
 
 (defroutes sieve-routes

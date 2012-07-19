@@ -17,11 +17,17 @@
            (GET ["/:n" :n #"[0-9]+"] [n]
                 (with-json (mathos/sieve (Integer. n)))))
 
+(defroutes fib-routes
+           (GET ["/:n" :n #"[0-9]+"] [n]
+                (with-json (mathos/fib (Integer. n)))))
+
 (defroutes app
            (GET "/" [] (index-page))
            (context "/emirp" [] emirp-routes)
            (context "/sieve" [] sieve-routes)
            (context "/primes" [] sieve-routes)
+           (context "/fib" [] fib-routes)
+           (context "/fibonacci" [] fib-routes)
            (route/resources "/")
            (route/not-found "not found"))
 

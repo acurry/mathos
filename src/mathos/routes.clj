@@ -22,7 +22,7 @@
                 (with-json (mathos/fib (Integer. n)))))
 
 (defroutes kaprekar-routes
-           (GET ["/:n" :n #"[0-9]+"] [n]
+           (GET ["/:n" :n #"[0-9]{4}"] [n]
                 (with-json (mathos/kaprekar (Integer. n)))))
 
 (defroutes app

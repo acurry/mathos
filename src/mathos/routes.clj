@@ -21,6 +21,10 @@
            (GET ["/:n" :n #"[0-9]+"] [n]
                 (with-json (mathos/fib (Integer. n)))))
 
+(defroutes kaprekar-routes
+           (GET ["/:n" :n #"[0-9]+"] [n]
+                (with-json (mathos/kaprekar (Integer. n)))))
+
 (defroutes app
            (GET "/" [] (index-page))
            (context "/emirp" [] emirp-routes)
@@ -28,6 +32,7 @@
            (context "/primes" [] sieve-routes)
            (context "/fib" [] fib-routes)
            (context "/fibonacci" [] fib-routes)
+           (context "/kaprekar" [] kaprekar-routes)
            (route/resources "/")
            (route/not-found "not found"))
 

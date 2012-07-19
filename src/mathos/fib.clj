@@ -2,7 +2,7 @@
 
 (def ^{:private true} fib 
   (lazy-cat [0 1]
-            (map +
+            (map +'  ; auto-cast integer to BigInt using +'
                  fib
                  (rest fib))))
 

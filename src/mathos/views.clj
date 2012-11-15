@@ -7,5 +7,6 @@
      [:title "mathos home"]
      (include-css "/css/style.css")]
     [:body
-     [:h1 "welcome to mathos!"]]))
+     [:h1 "welcome to mathos!"]
+     [:a {:href "/docs.html"} "docs"]]))
 

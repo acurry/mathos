@@ -4,7 +4,7 @@
   (:require [mathos.sieve :as s])
   (:require [mathos.fib :as f]))
 
-(defn emirp [n] 
+(defn emirp [n]
   (e/emirp n))
 
 (defn kaprekar [n]

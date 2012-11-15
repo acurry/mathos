@@ -33,6 +33,7 @@
            (context "/fib" [] fib-routes)
            (context "/fibonacci" [] fib-routes)
            (context "/kaprekar" [] kaprekar-routes)
+           (route/files "docs.html")
            (route/resources "/")
            (route/not-found "not found"))
 

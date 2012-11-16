@@ -9,21 +9,29 @@
    :headers {"Content-Type" "application/json"}
    :body (cljson/json-str data)})
 
+(defn gogo
+  [f n]
+  (with-json (f (Integer. n))))
+
 (defroutes emirp-routes
            (GET ["/:n" :n #"[0-9]+"] [n]
-                (with-json (mathos/emirp (Integer. n)))))
+                (gogo mathos/emirp n)))
 
 (defroutes sieve-routes
            (GET ["/:n" :n #"[0-9]+"] [n]
-                (with-json (mathos/sieve (Integer. n)))))
-
-(defroutes fib-routes
-           (GET ["/:n" :n #"[0-9]+"] [n]
-                (with-json (mathos/fib (Integer. n)))))
+                (gogo mathos/sieve n)))
 
 (defroutes kaprekar-routes
            (GET ["/:n" :n #"[0-9]{4}"] [n]
-                (with-json (mathos/kaprekar (Integer. n)))))
+                (gogo mathos/kaprekar n)))
+
+(defroutes factorial-routes
+           (GET ["/:n" :n #"[0-9]{1,4}"] [n]
+                (gogo mathos/factorial n)))
+
+(defroutes fib-routes
+           (GET ["/:n" :n #"[0-9]+"] [n]
+                (gogo mathos/fib n)))
 
 (defroutes app
            (GET "/" [] (index-page))
@@ -33,6 +41,7 @@
            (context "/fib" [] fib-routes)
            (context "/fibonacci" [] fib-routes)
            (context "/kaprekar" [] kaprekar-routes)
+           (context "/factorial" [] factorial-routes)
            (route/files "docs.html")
            (route/resources "/")
            (route/not-found "not found"))

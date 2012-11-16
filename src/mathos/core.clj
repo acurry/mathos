@@ -1,9 +1,10 @@
 (ns mathos.core
-  (:require [mathos.emirp :as e])
-  (:require [mathos.kaprekar :as k])
-  (:require [mathos.sieve :as s])
-  (:require [mathos.fib :as f]))
-  (:require [mathos.quadratic :as q]))
+  (:require [mathos.emirp :as e]
+            [mathos.kaprekar :as k]
+            [mathos.sieve :as s]
+            [mathos.quadratic :as q]
+            [mathos.factorial :as f]
+            [mathos.fib :as f]))
 
 (defn emirp [n]
   (e/emirp n))
@@ -19,3 +20,6 @@
 
 (defn quadratic [a b c]
   (q/quadratic a b c))
+
+(defn factorial [n]
+  (f/factorial n))

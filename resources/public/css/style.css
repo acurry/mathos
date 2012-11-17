@@ -1,4 +1,4 @@
-h1,h2,h3 {
+h1,h2 {
   width: 100%;
   margin-top: 5em;
   text-align: center;
@@ -7,6 +7,23 @@ h1,h2,h3 {
   font-family: sans-serif;
 }
 
+h2 {
+  margin-top: 0.2em;
+  color: #777;
+  font-size: 24pt;
+}
+
+body {
+  font-family: Arial;
+}
+
 a: {
   color: #555;
+}
+
+.routes {
+  font-family: Monaco, Menlo, Courier New;
+  color: #111;
+  background-color: #EEE;
+  padding: 0.3em;
 }

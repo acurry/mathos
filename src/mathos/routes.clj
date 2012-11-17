@@ -11,23 +11,27 @@
 
 (defn gogo
   [f n]
-  (with-json (f (Integer. n))))
+  (with-json (apply f (map #(Integer. %) n))))
 
 (defroutes emirp-routes
            (GET ["/:n" :n #"[0-9]+"] [n]
-                (gogo mathos/emirp n)))
+                (gogo mathos/emirp [n])))
 
 (defroutes sieve-routes
            (GET ["/:n" :n #"[0-9]+"] [n]
-                (gogo mathos/sieve n)))
+                (gogo mathos/sieve [n])))
 
 (defroutes kaprekar-routes
            (GET ["/:n" :n #"[0-9]{4}"] [n]
-                (gogo mathos/kaprekar n)))
+                (gogo mathos/kaprekar [n])))
 
 (defroutes factorial-routes
            (GET ["/:n" :n #"[0-9]{1,4}"] [n]
-                (gogo mathos/factorial n)))
+                (gogo mathos/factorial [n])))
+
+(defroutes quadratic-routes
+           (GET "/:a/:b/:c" [a b c]
+                (gogo mathos/quadratic [a b c])))
 
 (defroutes fib-routes
            (GET ["/:n" :n #"[0-9]+"] [n]
@@ -42,6 +46,7 @@
            (context "/fibonacci" [] fib-routes)
            (context "/kaprekar" [] kaprekar-routes)
            (context "/factorial" [] factorial-routes)
+           (context "/quadratic" [] quadratic-routes)
            (route/files "docs.html")
            (route/resources "/")
            (route/not-found "not found"))

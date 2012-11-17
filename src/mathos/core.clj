@@ -3,8 +3,8 @@
             [mathos.kaprekar :as k]
             [mathos.sieve :as s]
             [mathos.quadratic :as q]
-            [mathos.factorial :as f]
-            [mathos.fib :as f]))
+            [mathos.factorial :as fact]
+            [mathos.fib :as fib]))
 
 (defn emirp [n]
   (e/emirp n))
@@ -16,10 +16,10 @@
   (s/sieve n))
 
 (defn fib [n]
-  (f/fib-seq n))
+  (fib/fib-seq n))
 
 (defn quadratic [a b c]
   (q/quadratic a b c))
 
 (defn factorial [n]
-  (f/factorial n))
+  (fact/factorial n))

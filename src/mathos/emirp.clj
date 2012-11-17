@@ -2,8 +2,8 @@
   (:require [mathos.sieve :as s]))
 
 (defn in?
-  [seq elm]
-  (some #(= elm %) seq))
+  [s e]
+  (some #(= e %) s))
 
 (defn to-numeric-palindrome
   "Returns a number's reversed digits as an Integer."
@@ -20,10 +20,6 @@
       (fn [x]
         (and
           (not (s/palindromic? x))
-          (in? primes (to-numeric-palindrome x))
-          )
-        ) primes
-      )
-    )
-  )
+          (in? primes (to-numeric-palindrome x))))
+      primes)))
 
